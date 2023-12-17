@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
   const filterTable = (columnIndex, filterValue) => {
-    const table = document.querySelector(".w3-table-all");
+    const table = document.querySelector(".table");
     const rows = table.getElementsByTagName("tr");
 
     for (let i = 1; i < rows.length; i++) {

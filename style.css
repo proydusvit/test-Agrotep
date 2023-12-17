@@ -1,0 +1,100 @@
+    body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            width: 95%;
+            padding-top:22px
+        }
+        nav {
+            width: 250px;
+            background-color: #ddd;
+            position: fixed;
+            height: 100%;
+            overflow: auto;
+
+       
+        }
+        @media screen and (max-width: 1198px) {
+    nav {
+        width: 17%;
+        height: 100%;
+        position: absolute;
+    }
+        .table {
+        overflow-x: auto;
+        display: block;
+    }
+    .link{
+        display: none;
+    }
+
+    th, td {
+        white-space: nowrap;
+    }
+}
+
+        nav div {
+            padding: 10px;
+        }
+     
+        .table {
+        width:95%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        h5 {
+            margin-top: 0;
+        }
+        button {
+            padding: 5px 10px;
+            margin-top: 5px;
+            background-color: #333;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #555;
+        }
+        .name{
+
+            width: 100px;
+        }
+         .box{
+display: grid;
+       
+        }
+        #catFacts {
+            margin-top: 20px;
+        }
+
+       .logo > span {
+    font-size: 24px;
+    font-weight: bold;
+    color: #fff;
+   
+}
+
+.logo  {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    background-color: #333f;
+    border-bottom: 1px solid #ddd;
+   
+}

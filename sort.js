@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", () => {
       let isScoreSortedAscending = false;
 
       const sortTable = (columnIndex, ascending) => {
-        const table = document.querySelector(".w3-table-all");
+        const table = document.querySelector(".table");
         const rows = Array.from(table.getElementsByTagName("tr"));
 
         rows.shift();

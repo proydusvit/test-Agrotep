@@ -1,32 +1,30 @@
-document.addEventListener("DOMContentLoaded", () => {
+ function fetchCatFactAndUpdateTable(row, cellIndex) {
+            fetch('https://catfact.ninja/fact')
+                .then(response => response.json())
+                .then(data => {
+                    const table = document.querySelector('tbody');
+                    const cell = table.rows[row].cells[cellIndex];
+                    cell.textContent = data.fact;
+                })
+                .catch(error => console.error('Помилка отримання факту про котів:', error));
+        }
+
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const tableRows = document.querySelectorAll('tbody tr');
+
+            tableRows.forEach((row, index) => {
+                fetchCatFactAndUpdateTable(index, 3);
+            });
+        });
+
     
-  const showCatFactsButton = document.getElementById("showCatFacts");
-  const catFactsDiv = document.getElementById("catFacts");
-    const catFactParagraph = document.getElementById("catFact");
-    
-  let intervalId;
+        document.getElementById('showCatFacts').addEventListener('click', () => {
+            const tableRows = document.querySelectorAll('tbody tr');
 
-  const fetchCatFact = () => {
-    fetch("https://catfact.ninja/fact")
-      .then(response => response.json())
-      .then(data => {
-        catFactParagraph.textContent = data.fact;
-        catFactsDiv.style.display = "block";
-      })
-      .catch(error => {
-        console.error("Помилка отримання даних про котиків:", error);
-      });
-  };
+            tableRows.forEach((row, index) => {
+                fetchCatFactAndUpdateTable(index, 3);
+            });
 
-  const toggleCatFacts = () => {
-    if (catFactsDiv.style.display === "none") {
-      fetchCatFact();
-      intervalId = setInterval(fetchCatFact, 3000);
-    } else {
-      clearInterval(intervalId);
-      catFactsDiv.style.display = "none";
-    }
-  };
-
-  showCatFactsButton.addEventListener("click", toggleCatFacts);
-});
+            document.getElementById('catFacts').style.display = 'block';
+        });
